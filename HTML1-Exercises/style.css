@@ -110,3 +110,30 @@ section {
     color: rgba(255, 255, 255, 0.5);
     transform: scale(1.1);
 }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  
+  .footer-title {
+    margin-top: 5px;
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  
+  .footer-title span a{
+    color: rgb(197, 168, 255);
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+  .footer-title span a:hover{
+    color: rgb(255, 200, 0);
+  }
