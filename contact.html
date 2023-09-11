@@ -6,44 +6,84 @@
     <meta name="description" content="Personal page">
     <meta name="keywords" content="KFUPM , KFUPM students , Software Engineering , Projects">
     <meta name="author" content="Hassan Alabdulal">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 
     <title>Hassan Alabdulal</title>
 
 </head>
 <body>
-    <h2>Let's work together 👇</h2>
 
-    <ul>
-       <li> linkedin:
-            <span>
-                <a href="https://www.linkedin.com/in/hassan-alabdulal/" target="_blank"> @hassan-alabdulal </a>
-            </span>
-        </li>
+    <!-- <header>
+        <a href="homePage.html" class="logo">Hassan Alabdulal</a>
+        <nav class="navigation"> 
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header> -->
 
-        <li> Twitter:
-            <span>
-                <a href="https://twitter.com/7assan_abdulaal" target="_blank"> @7assan_abdulaal</a>
-            </span>
-        </li>
-    </ul>
+    <section>
+        <h2>Contact with me! </h2>
+        <ul>
+            <li> linkedin:
+                 <span>
+                     <a href="https://www.linkedin.com/in/hassan-alabdulal/" target="_blank"> @hassan-alabdulal </a>
+                 </span>
+             </li>
+     
+             <li> Twitter:
+                 <span>
+                     <a href="https://twitter.com/7assan_abdulaal" target="_blank"> @7assan_abdulaal</a>
+                 </span>
+             </li>
+         </ul>
+    </section>
 
-    <form action="">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Hassan Alabdulal" required>
+    <hr>
 
-        <br>
+    <main>
+        <h2>Let's work together 👇</h2>
+        <form action="" >
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Hassan Alabdulal" autocomplete="given-name" required><br>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="example@example.com" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="example@example.com" autocomplete="off"  required><br>
+            
+            <label for="mobileNumber">Mobile</label>
+            <input type="tel" id="mobileNumber" value="966" required> <br><br>
 
-        <br>
+            <datalist id="countries">
+                <option value="Saudi Arabia">
+                <option value="Bahrain">
+                <option value="Oman">
+                <option value="Kuwait">
+                <option value="Qatar">
+                <option value="United Arab Emirates">
+            </datalist><br>
 
-        <p><label for="message">Send a message:</label></p>
-        <textarea name="message" id="message" cols="50" rows="5" required></textarea>
-        <br>
-        <button type="submit">Send</button>
-    </form>
+            <p><label for="message">Send a message:</label></p>
+            <textarea name="message" id="message" cols="50" rows="5" required></textarea> <br><br>
 
+            <h3>What languages do you speak?</h3>
+            <input type="checkbox" id="language" name="language">
+            <label for="language"> I speak Arabic fluently</label><br>
+            <input type="checkbox" id="language" name="language">
+            <label for="language"> I speak English fluently</label><br>
+
+            <h3>Please select your gender:</h3>
+              <input type="radio" id="gender" name="gender" value="Male" required>
+              <label for="male">Male</label><br>
+              <input type="radio" id="gender" name="gender" value="Female">
+              <label for="female">Female</label><br> <br>  
+
+            <label for="country">Where are you from?</label>
+            <input list="countries" name="country" id="country" required> <br><br>
+
+            <a href="confirmationPage.html" type="submit">Send</a>
+        </form>
+    </main>
+    
     <hr>
     <a href="homePage.html">Home page</a>
 
