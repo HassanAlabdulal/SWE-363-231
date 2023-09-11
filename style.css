@@ -23,6 +23,8 @@ header {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.8rem;
+    cursor: default;
+
 }
 
 .navigation a {
@@ -37,7 +39,7 @@ header {
     color: #601cfc;
 }
 
-section {
+article {
     padding: 100px 200px;
 }
 
