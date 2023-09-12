@@ -6,7 +6,6 @@
     <meta name="description" content="Personal page">
     <meta name="keywords" content="KFUPM , KFUPM students , Software Engineering , Projects">
     <meta name="author" content="Hassan Alabdulal">
-    <!-- <link rel="stylesheet" href="style.css"> -->
 
     <title>Hassan Alabdulal</title>
 
@@ -22,7 +21,7 @@
         </nav>
     </header> -->
 
-    <section>
+    <section style="display: flex; align-items: center; flex-direction: column;">
         <h2>Contact with me! </h2>
         <ul>
             <li> linkedin:
@@ -41,26 +40,19 @@
 
     <hr>
 
-    <main>
+    <main style="display: flex; align-items: center; flex-direction: column;">
         <h2>Let's work together 👇</h2>
-        <form action="" >
+        <form action="confirmationPage.html" >
             <label for="name">Name</label>
             <input type="text" id="name" placeholder="Hassan Alabdulal" autocomplete="given-name" required><br>
 
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="example@example.com" autocomplete="off"  required><br>
+            <input type="email" id="email" placeholder="example@example.com" autocomplete="email"  required><br>
             
             <label for="mobileNumber">Mobile</label>
             <input type="tel" id="mobileNumber" value="966" required> <br><br>
 
-            <datalist id="countries">
-                <option value="Saudi Arabia">
-                <option value="Bahrain">
-                <option value="Oman">
-                <option value="Kuwait">
-                <option value="Qatar">
-                <option value="United Arab Emirates">
-            </datalist><br>
+            
 
             <p><label for="message">Send a message:</label></p>
             <textarea name="message" id="message" cols="50" rows="5" required></textarea> <br><br>
@@ -72,15 +64,25 @@
             <label for="language"> I speak English fluently</label><br>
 
             <h3>Please select your gender:</h3>
-              <input type="radio" id="gender" name="gender" value="Male" required>
-              <label for="male">Male</label><br>
-              <input type="radio" id="gender" name="gender" value="Female">
-              <label for="female">Female</label><br> <br>  
+            <input type="radio" id="gender" name="gender" value="Male" required>
+            <label for="male">Male</label><br>
+            <input type="radio" id="gender" name="gender" value="Female">
+            <label for="female">Female</label><br> <br>  
 
             <label for="country">Where are you from?</label>
-            <input list="countries" name="country" id="country" required> <br><br>
+            <input list="countries" name="country" id="country" required>
+            <datalist id="countries">
+                <option value="Saudi Arabia">
+                <option value="Bahrain">
+                <option value="Oman">
+                <option value="Kuwait">
+                <option value="Qatar">
+                <option value="United Arab Emirates">
+            </datalist><br><br>
 
-            <a href="confirmationPage.html" type="submit">Send</a>
+            <input type="submit"></a>
+        
+            
         </form>
     </main>
     
