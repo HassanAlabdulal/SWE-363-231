@@ -23,6 +23,8 @@ header {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.8rem;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 0px 3px rgba(0,0,0,15%);
 
 }
 
@@ -38,7 +40,7 @@ header {
     color: #601cfc;
 }
 
-article {
+section {
     padding: 100px 200px;
 }
 
