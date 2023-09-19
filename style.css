@@ -181,11 +181,6 @@ section {
     font-size: 8rem;
     text-align: center;
 }
-/* .card .icon span{
-    color: #3a6cf4;
-    font-size: 7rem;
-    text-align: center;
-} */
 
 .info {
     text-align: center;
@@ -196,4 +191,17 @@ section {
     font-size: 1.2rem;
     font-weight: 700;
     margin: 10px;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+.top {
+    background-color: #EB5406;
+}
+
+table {
+    background-color: aqua;
+    font-size: 25px;
 }
