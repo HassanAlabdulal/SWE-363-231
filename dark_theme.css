@@ -10,3 +10,12 @@ a {
 h2 {
     color: #16e1b5;
 }
+
+input {
+    height: 20px;
+    border-color: lightgray;
+}
+
+#message {
+    height: 50px;
+}
