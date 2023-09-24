@@ -29,6 +29,7 @@ header {
     font-size: 1.8rem;
     letter-spacing: 1.5px;
     text-shadow: 2px 0px 3px rgba(0,0,0,15%);
+    /* margin-right: 400px */
 
 }
 
@@ -44,6 +45,28 @@ header {
     display: inline-block;
     box-shadow: 0 5px 15px rgba(1, 1, 1, 15%);
     transition: all 0.7s ease;
+}
+
+header div a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #000;
+    border: #000 solid 1px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(1, 1, 1, 10%);
+    transition: all 0.7s ease;
+    /* margin-right: -80px; */
+}
+
+header div a:hover{
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.15);
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 45%);
 }
 
 .navigation a:hover{
@@ -67,7 +90,7 @@ section {
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    /* position: relative;   */
+    position: relative;  
 }
 
 /* .background-img {
