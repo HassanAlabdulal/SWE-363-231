@@ -8,8 +8,9 @@
     <meta name="author" content="Hassan Alabdulal">
 
       <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
       <!-- Google icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,32 +21,39 @@
 
     <style>
 
+        * {
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        html {
+            direction: rtl;
+        }
+
         .background-img {
             position: absolute;  
-            right: 0;              
+            left: 0;              
             bottom: 0;  
-            margin-right: 200px;
         }
-        
     </style>
+
 </head>
 <body>
 
     <header>
-        <a href="" class="logo" id="the_most_important"> <em>Hassan Alabdulal</em></a>
+        <a href="" class="logo" id="the_most_important"> <em>حسن العبدالعال</em></a>
         <nav class="navigation"> 
-          <a href="#homePage" style="padding: 10px 31px;">Home</a>
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="contact.html">Contact</a>
+          <a href="#homePage" style="padding: 10px 31px;">الصفحة الرئيسية</a>
+          <a href="#services">الخدمات</a>
+          <a href="#projects">المشاريع</a>
+          <a href="contact.html">تواصل معي</a>
         </nav>
     </header>
 
     <section class="main-page" id="homePage">
         <div>
-            <h2>Hello 👋, I'm Hassan <br><span>Frontend Developer</span></h2>
-            <h3>I build amazing web applications</h3>
-            <a href="#projects" class="main-btn">View my work</a>
+            <h2>آهلا 👋, انا حسن <br><span>مطور واجهات أمامية</span></h2>
+            <h3>أقوم ببناء مواقع رائعة</h3>
+            <a href="#projects" class="main-btn">شاهد أعمالي</a>
 
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/hassan-alabdulal" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -61,7 +69,7 @@
     </section>
 
     <section class="services-cards" id="services">
-      <h2 class="title">Services</h2>
+      <h2 class="title">الخدمات</h2>
 
         <div class="content">
 
@@ -122,45 +130,10 @@
         </div>
     </section>
 
-    <!-- <section class="projects" id="projects">
-        <table border="1">
-            <thead>
-                <tr>
-                    <th colspan="4">Previous projects</th>
-                </tr>
-            </thead>
-    
-            <tbody>
-                <tr class="top">
-                    <td>Name</td>
-                    <td>Languages ​​and frameworks</td>
-                </tr>
-    
-                <tr class="data">
-                    <td>KFUPM Gym</td>
-                    <td>Java and JavaFx</td>
-                </tr>
-    
-                <tr class="data">
-                    <td>To do List</td>
-                    <td>HTML, CSS, JavaScript</td>
-                </tr>
-    
-                <tr class="data">
-                    <td>Data Analysis of Internet Users</td>
-                    <td>Python</td>
-                </tr>
-    
-            </tbody>
-        </table>
-    
-    </section> -->
-
-
 
 
     <section class="projects" id="projects">
-        <h2 class="title">Projects</h2>
+        <h2 class="title">المشاريع</h2>
         <div class="projects-container">
             <div class="container">
 
