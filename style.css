@@ -31,9 +31,6 @@ header {
     text-shadow: 2px 0px 3px rgba(0,0,0,15%);
     /* margin-right: 400px */
 
-    animation: lightSpeedInLeft; 
-    animation-duration: 2s;
-
 }
 
 .navigation a {
