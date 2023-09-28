@@ -6,11 +6,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* body{
-    background-color: #5d7fdd;
-} */
-
-
 
 /* Animation */
 
@@ -28,8 +23,6 @@
     z-index: 1000;
 
 }
-
-
 
 .all-content {
     opacity: 0;

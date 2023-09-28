@@ -1,21 +1,115 @@
-body {
-    background-color: rgb(37,11,123);
-    color: white;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
 }
 
-a {
-    color: green;
+.main-content {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #666AF5;
 }
 
-h2 {
-    color: #16e1b5;
+.contant-table {
+    width: 58.4375rem; /* You might want to adjust this width to suit your design */
+    height: 36.375rem; /* You might want to adjust this height to suit your design */
+    border-radius: 0.875rem;
+    background: #FFF;
+    box-shadow: 0px 20px 30px 0px rgba(102, 106, 245, 0.13);
+}
+
+h1 {
+    color: #7E86F6;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.12rem;
+    /* padding: 2.25rem 1.5rem;/ */
+    margin: 2.56rem 46.44rem 0rem 3.12rem;
+    width: 11rem;
+
+}
+
+h3 {
+    margin: 0.13rem 7.75rem 0rem 3.12rem;
+    /* width: 100%; */
+    color: #000;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.06rem;
+
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
 }
 
 input {
-    height: 20px;
-    border-color: lightgray;
+    width: 26.875rem;
+    height: 3.125rem;
+    flex-shrink: 0;
+    background: #F5F5FF;
+    border: none;
+    color: #9F9F9F;
+    font-family: Poppins;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.06rem;
+
 }
 
-#message {
-    height: 50px;
+#name {
+    margin: 2.56rem 28.44rem 0rem 3.12rem;
+
+}
+
+#email {
+    margin: 2.56rem 28.44rem 0rem 3.12rem;
+}
+
+textarea {
+    width: 26.875rem;
+    height: 9.375rem;
+    flex-shrink: 0;
+    background: #F5F5FF;
+    margin-bottom: 6.88rem;
+    border: none;
+    margin: 2.56rem 28.44rem 0rem 3.12rem;
+    color: #9F9F9F;
+    font-family: Poppins;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.06rem;
+}
+
+a {
+    width: 26.875rem;
+    height: 3.125rem;
+    flex-shrink: 0;
+    background: #6569F6;
+    text-decoration: none;
+    margin: 2.56rem 28.44rem 1.88rem 3.12rem;
+
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.1rem;
 }
