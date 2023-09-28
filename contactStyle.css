@@ -41,7 +41,6 @@ h3 {
     margin: 0.13rem 7.75rem 0rem 3.12rem;
     /* width: 100%; */
     color: #000;
-    font-family: Poppins;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
@@ -62,12 +61,12 @@ input {
     background: #F5F5FF;
     border: none;
     color: #9F9F9F;
-    font-family: Poppins;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.06rem;
+    padding: 1rem 14.94rem 1rem 1.25rem;
 
 }
 
@@ -89,12 +88,12 @@ textarea {
     border: none;
     margin: 2.56rem 28.44rem 0rem 3.12rem;
     color: #9F9F9F;
-    font-family: Poppins;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.06rem;
+    padding: 1.31rem 13.37rem 6.94rem 1.25rem;
 }
 
 a {
@@ -104,9 +103,8 @@ a {
     background: #6569F6;
     text-decoration: none;
     margin: 2.56rem 28.44rem 1.88rem 3.12rem;
-
+    padding: 0.62rem 10.81rem;
     color: #FFF;
-    font-family: Poppins;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 700;
