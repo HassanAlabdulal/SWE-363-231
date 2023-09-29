@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -16,13 +15,17 @@
     background-color: #666AF5;
 }
 
-.contant-table {
-    width: 58.4375rem; /* You might want to adjust this width to suit your design */
-    height: 36.375rem; /* You might want to adjust this height to suit your design */
+.content-table {
+    width: 58.4375rem;
+    height: 37.375rem;
     border-radius: 0.875rem;
     background: #FFF;
     box-shadow: 0px 20px 30px 0px rgba(102, 106, 245, 0.13);
+    display: flex;
+    justify-content: space-between; /* Adjusted this property */
+    /* padding: 0 1rem;  */
 }
+
 
 h1 {
     color: #7E86F6;
@@ -39,7 +42,7 @@ h1 {
 
 h3 {
     margin: 0.13rem 7.75rem 0rem 3.12rem;
-    /* width: 100%; */
+    width: 100%;
     color: #000;
     font-size: 1rem;
     font-style: normal;
@@ -67,16 +70,23 @@ input {
     line-height: normal;
     letter-spacing: 0.06rem;
     padding: 1rem 14.94rem 1rem 1.25rem;
+    transition:  0.5s ease;
+
+
+}
+
+input:hover {
+    box-shadow: 0 5px 15px rgba(1, 1, 1, 9%);
 
 }
 
 #name {
-    margin: 2.56rem 28.44rem 0rem 3.12rem;
+    margin: 2.56rem 4.69rem  0rem 3.12rem;
 
-}
+} 
 
 #email {
-    margin: 2.56rem 28.44rem 0rem 3.12rem;
+    margin: 2.56rem 4.69rem  0rem 3.12rem;
 }
 
 textarea {
@@ -86,7 +96,7 @@ textarea {
     background: #F5F5FF;
     margin-bottom: 6.88rem;
     border: none;
-    margin: 2.56rem 28.44rem 0rem 3.12rem;
+    margin: 2.56rem 4.69rem  0rem 3.12rem;
     color: #9F9F9F;
     font-size: 0.75rem;
     font-style: normal;
@@ -94,15 +104,22 @@ textarea {
     line-height: normal;
     letter-spacing: 0.06rem;
     padding: 1.31rem 13.37rem 6.94rem 1.25rem;
+    transition:  0.5s ease;
+
 }
 
-a {
+textarea:hover {
+    box-shadow: 0 5px 15px rgba(1, 1, 1, 9%);
+
+}
+
+#submit-btn {
     width: 26.875rem;
     height: 3.125rem;
     flex-shrink: 0;
     background: #6569F6;
     text-decoration: none;
-    margin: 2.56rem 28.44rem 1.88rem 3.12rem;
+    margin: 2.56rem 4.69rem 1.88rem 3.12rem;
     padding: 0.62rem 10.81rem;
     color: #FFF;
     font-size: 1.25rem;
@@ -110,4 +127,46 @@ a {
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+}
+
+#submit-btn:hover {
+    /* background: #7f82ef; */
+    box-shadow: 0 5px 15px rgba(1, 1, 1, 25%);
+    transform: scale(1.007);
+
+}
+
+.left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+    width: 50%; 
+}
+
+.right-side img {
+    width: 80%; 
+    height: auto; 
+    margin-left: 4.81rem;
+    margin-top: 7.12rem;
+}
+
+.social-icons {
+    display: flex;
+    margin: 4.88rem 6rem 5.88rem 6rem;
+    padding: 1rem 2.5rem;
+
+
+}
+
+.social-icons a {
+    color: #6569F6;
+    font-size: 1.7rem;
+    margin-right: 2rem;
+    transition: all 0.5s ease;
+
+}
+
+.social-icons a:hover {
+    color: #8c8fe7;
+    transform: scale(1.16);
 }
