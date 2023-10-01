@@ -412,13 +412,14 @@ section {
         font-size: 0.55rem;
         letter-spacing: 1px;
         margin-right: 1px;
-    
+
     }
     
     .navigation a {
         font-size: 0.2em;
         padding: 2px 5px;
         margin-left: 1px;
+         
     }
     
     header div a {
