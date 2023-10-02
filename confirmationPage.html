@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="dark_theme.css">
+    <!-- <link rel="stylesheet" href="contactStyle.css"> -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
 
     <title>Confirmation Page</title>
 </head>
 <body>
-    <h1>Thank you for your effort</h1>
-    <h2>We will be in touch shortly.</h2>
 
-    <hr>
-    <a href="homePage.html">Home page</a>
+    <div class="p-6 max-w-md mx-auto rounded-xl shadow-md mt-24 mb-5 bg-lime-500">
+        <h1 class="text-3xl font-bold text-clifford">Thank you for your effort </h1>
+        <h2 class="text-2xl text-pink-50">We will be in touch shortly</h2>
+    </div>
+    
+    <a href="homePage.html" class="bg-orange-600 p-4 ml-8 mt-10 rounded-lg text-gray-50 hover:bg-orange-400 transition-colors duration-700">Home page</a>
 </body>
 </html>
