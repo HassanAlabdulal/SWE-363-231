@@ -42,10 +42,6 @@
             cursor: pointer;
         }
 
-        .cell:hover {
-            background-color: blanchedalmond;
-        }
-
         .grid {
             display: grid;
             grid-template-columns: auto auto auto;
@@ -106,7 +102,7 @@
                         "6", "7", "8"
                         ];
 
-
+        
         for (const item of gridItems) {
             item.addEventListener("click", function () {
                 if (isFinished || item.innerHTML !== "") {
@@ -120,6 +116,19 @@
                 if (!isFinished) {
                     turn = turn === "X" ? "O" : "X";
                     document.getElementById("turn").textContent = `Now it's is ${turn} turn`;
+                }
+            });
+
+
+            item.addEventListener("mouseover", function(){
+                if (item.innerHTML === "") {
+                    item.style.background = "blanchedalmond";
+                }
+            });
+
+            item.addEventListener("mouseleave", function(){
+                if (item.innerHTML === "") {
+                    item.style.background = "beige";
                 }
             });
         }
@@ -162,13 +171,7 @@
             for (const item of gridItems) {
                 item.innerHTML = "";
                 item.style.background = 'beige';
-                item.addEventListener("mouseover", function(){
-                    item.style.background = "blanchedalmond"
-                })
-
-                item.addEventListener("mouseleave", function(){
-                    item.style.background = "beige"
-                })
+                
             }
             boardArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
             isFinished = false;
@@ -177,7 +180,6 @@
         }
 
     </script>
-    </div>
 </body>
 
 </html>
