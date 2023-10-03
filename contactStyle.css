@@ -169,3 +169,46 @@ textarea:hover {
     color: #8c8fe7;
     transform: scale(1.16);
 }
+
+
+@media (min-width: 300px) and (max-width: 767px){
+    .content-table {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+    }
+  
+    .left-side, .right-side {
+      width: 100%;
+    }
+  
+    .contact-details, input, textarea, #submit-btn {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    h1, h3 {
+      text-align: center;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input {
+        font-size: 0.45rem;
+        
+    }
+  
+    .right-side img {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .social-icons {
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
