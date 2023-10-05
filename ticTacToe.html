@@ -17,10 +17,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            
+            height: 100vh;    
         }
-
 
         h1 {
             margin-bottom: 0px;
@@ -73,19 +71,19 @@
     <h1 id="turn">
         Now it's is <span>X</span> turn
     </h1>
-    <p>Use <code>Space</code> to select & <code>Arrows</code> to move</p>
+    <p>Use <code>Arrow Keys</code> to navigate & <code>Space</code> to select a cell</p>
     <!-- Board -->
     <div class="board">
         <div class="grid">
-            <div class="cell" value="1"></div>
-            <div class="cell" value="2"></div>
-            <div class="cell" value="3"></div>
-            <div class="cell" value="4"></div>
-            <div class="cell" value="5"></div>
-            <div class="cell" value="6"></div>
-            <div class="cell" value="7"></div>
-            <div class="cell" value="8"></div>
-            <div class="cell" value="9"></div>
+            <div class="cell" value="1" tabindex="0"></div>
+            <div class="cell" value="2" tabindex="0"></div>
+            <div class="cell" value="3" tabindex="0"></div>
+            <div class="cell" value="4" tabindex="0"></div>
+            <div class="cell" value="5" tabindex="0"></div>
+            <div class="cell" value="6" tabindex="0"></div>
+            <div class="cell" value="7" tabindex="0"></div>
+            <div class="cell" value="8" tabindex="0"></div>
+            <div class="cell" value="9" tabindex="0"></div>
         </div>
     </div>
 
@@ -96,27 +94,55 @@
         let gridItems = document.getElementsByClassName("cell");
         let turn = "X";
         let isFinished = false;
-        let boardArray = [
-                        "0", "1", "2",
-                        "3", "4", "5", 
-                        "6", "7", "8"
-                        ];
+        let boardArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
+        let currentIndex = 0; 
+        gridItems[currentIndex].focus(); 
 
-        
+        function handleKeyNavigation(event) {
+            switch (event.key) {
+                case 'ArrowUp':
+                    currentIndex = (currentIndex - 3 + 9) % 9;
+                    break;
+                case 'ArrowDown':
+                    currentIndex = (currentIndex + 3) % 9;
+                    break;
+                case 'ArrowLeft':
+                    currentIndex = (currentIndex - 1 + 9) % 9;
+                    break;
+                case 'ArrowRight':
+                    currentIndex = (currentIndex + 1) % 9;
+                    break;
+                case ' ':
+                case 'Spacebar':
+                    selectCell(gridItems[currentIndex]);
+                    break;
+                default:
+                    return;
+            }
+            gridItems[currentIndex].focus();
+        }
+
+        function selectCell(item) {
+            if (isFinished || item.innerHTML !== "") {
+                return;
+            }
+            item.style.background = 'blanchedalmond';
+            let value = item.getAttribute("value");
+            item.innerHTML = turn;
+            boardArray[value - 1] = turn;
+            checkWinner();
+            if (!isFinished) {
+                turn = turn === "X" ? "O" : "X";
+                document.getElementById("turn").textContent = `Now it's is ${turn} turn`;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyNavigation);
+
+
         for (const item of gridItems) {
             item.addEventListener("click", function () {
-                if (isFinished || item.innerHTML !== "") {
-                    return;
-                }
-                item.style.background = 'blanchedalmond';
-                let value = item.getAttribute("value");
-                item.innerHTML = turn;
-                boardArray[value - 1] = turn;
-                checkWinner();
-                if (!isFinished) {
-                    turn = turn === "X" ? "O" : "X";
-                    document.getElementById("turn").textContent = `Now it's is ${turn} turn`;
-                }
+                selectCell(item);
             });
 
 
@@ -131,6 +157,8 @@
                     item.style.background = "beige";
                 }
             });
+
+            
         }
 
         function checkWinner() {
