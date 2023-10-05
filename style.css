@@ -79,6 +79,7 @@ header {
     transition: all 0.7s ease;
     animation: fadeIn;
     animation-duration: 8s;
+    cursor: pointer;
 
 }
 
