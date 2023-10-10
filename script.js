@@ -38,7 +38,7 @@ let projects = [
        "src" : "assets/To Do List.png",
        "header" : "To Do List",
        "description" : "This Web Application helps individuals stay organized and productive by providing a platform to manage their tasks efficiently.",
-       "link" : "https://github.com/HassanAlabdulal/To-do-list"
+       "link" : "https://frolicking-kheer-037a2b.netlify.app/"
     },
     {
        "src" : "assets/background.png",
