@@ -24,24 +24,32 @@
 
     <section class="main-content">
         <section class="content-table">
-
+    
             <div class="left-side">
                 <div>
                     <h1>Get In Touch</h1>
                     <h3>We are here for you! How can we help?</h3>
                 </div>
     
-                <div class="contact-details">
-                    <input type="text" placeholder="Enter your name" id="name">
-                    <input type="text" placeholder="Enter your email address" id="email">
-                    <textarea name="" id="" placeholder="Go ahead, We are listening..."></textarea>
-                    <a id="submit-btn" href="confirmationPage.html">Submit</a>
-                </div>
+                <form action="#" id="contactForm">
+                    <div class="contact-details">
+                        <input type="text" placeholder="Enter your name" id="name" name="name">
+                        <input type="text" placeholder="Enter your email address" id="email" name="email">
+                        <textarea name="message" id="message" placeholder="Go ahead, We are listening..."></textarea>
+    
+                        <!-- Signature Canvas -->
+                        <label>Signature:</label>
+                        <canvas id="signatureCanvas"></canvas>
+                        <input type="hidden" id="signatureInput" name="signature" value="">
+    
+                        <input type="submit" id="submit-btn" value="Submit">
+                    </div>
+                </form>
             </div>
-                
+    
             <div class="right-side">
                 <img src="assets/contactImg.svg">
-
+    
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/hassan-alabdulal" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/HassanAlabdulal" target="_blank"><i class="fab fa-github"></i></a>
@@ -50,13 +58,47 @@
                 </div>
             </div>
             
-            
         </section>
     </section>
     
     <hr>
     <a href="homePage.html">Home page</a>
 
+    <script>
+        const canvas = document.getElementById('signatureCanvas');
+        const context = canvas.getContext('2d');
+        let drawing = false;
 
+        canvas.addEventListener('mousedown', () => {
+            drawing = true;
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            drawing = false;
+            context.beginPath();
+            document.getElementById('signatureInput').value = canvas.toDataURL();
+        });
+
+        canvas.addEventListener('mousemove', draw);
+
+        function draw(event) {
+            if (!drawing) return;
+            context.lineWidth = 5;
+            context.lineCap = 'round';
+
+            context.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+            context.stroke();
+            context.beginPath();
+            context.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+        }
+
+        // document.getElementById('yourForm').addEventListener('submit', (e) => {
+        //     if (!document.getElementById('signatureInput').value) {
+        //         e.preventDefault();
+        //         alert("Please provide your signature.");
+        //     }
+        // });
+
+    </script>
 </body>
 </html>
