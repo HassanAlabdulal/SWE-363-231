@@ -57,7 +57,7 @@ let projects = [
        "src" : "assets/currencyExchange.png",
        "header" : "Currency Exchange",
        "description" : "A web application designed to deliver precise and instantaneous currency conversion.",
-       "link" : "CurrencyConverter/index.html"
+       "link" : "currencyExchange.html"
     }
 ]
 
