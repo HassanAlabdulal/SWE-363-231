@@ -52,6 +52,13 @@ let projects = [
        "description" : "It is a classic, two-player game where the goal is to complete a row, column, or diagonal with either three 'X's or 'O's on a 3x3 grid.",
        "link" : "ticTacToe.html"
     },
+
+    {
+       "src" : "assets/currencyExchange.png",
+       "header" : "Currency Exchange",
+       "description" : "A web application designed to deliver precise and instantaneous currency conversion.",
+       "link" : "CurrencyExchange/index.html"
+    }
 ]
 
 function fillServicesInThePage(){
