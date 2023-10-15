@@ -68,7 +68,7 @@ document.addEventListener('mousemove', () => {
 
     timeout = setTimeout(() => {
         startScreensaver();
-    }, 10000); // 1 minute of no activity
+    }, 60000); // 1 minute of no activity
 });
 
 // Initial trigger to start the screensaver timeout
