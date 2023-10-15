@@ -1,3 +1,4 @@
+
 let timeout;
 let scene, camera, renderer;
 let shapes = [];
@@ -13,17 +14,17 @@ function init() {
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
     // Geometrical shapes
-    const geometry1 = new THREE.TorusGeometry(5, 3, 16, 100);
-    const geometry2 = new THREE.SphereGeometry(4, 32, 32);
-    const geometry3 = new THREE.BoxGeometry(5, 5, 5);
-
     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
 
-    shapes.push(new THREE.Mesh(geometry1, material));
-    shapes.push(new THREE.Mesh(geometry2, material));
-    shapes.push(new THREE.Mesh(geometry3, material));
+    const geometries = [
+        new THREE.TorusGeometry(5, 3, 16, 100),
+        new THREE.SphereGeometry(4, 32, 32),
+        new THREE.BoxGeometry(5, 5, 5)
+    ];
 
-    shapes.forEach(shape => {
+    geometries.forEach(geometry => {
+        const shape = new THREE.Mesh(geometry, material);
+        shapes.push(shape);
         scene.add(shape);
     });
 
@@ -33,10 +34,10 @@ function init() {
 function animate() {
     requestAnimationFrame(animate);
 
-    shapes[0].rotation.x += 0.005;
-    shapes[0].rotation.y += 0.005;
-    shapes[1].rotation.y += 0.005;
-    shapes[2].rotation.x += 0.005;
+    shapes.forEach(shape => {
+        shape.rotation.x += 0.005;
+        shape.rotation.y += 0.005;
+    });
 
     renderer.render(scene, camera);
 }
