@@ -8,8 +8,8 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    geometry = new THREE.BoxGeometry();
-    material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    geometry = new THREE.TorusGeometry(2, 0.5, 16, 100);
+    material = new THREE.MeshBasicMaterial({ color: 0xFFFFFF });
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
