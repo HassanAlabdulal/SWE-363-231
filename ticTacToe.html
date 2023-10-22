@@ -91,120 +91,228 @@
 
 
     <script>
+        // let gridItems = document.getElementsByClassName("cell");
+        // let turn = "X";
+        // let isFinished = false;
+        // let boardArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
+        // let currentIndex = 0; 
+        // gridItems[currentIndex].focus(); 
+
+        // function handleKeyNavigation(event) {
+        //     switch (event.key) {
+        //         case 'ArrowUp':
+        //             currentIndex = (currentIndex - 3 + 9) % 9;
+        //             break;
+        //         case 'ArrowDown':
+        //             currentIndex = (currentIndex + 3) % 9;
+        //             break;
+        //         case 'ArrowLeft':
+        //             currentIndex = (currentIndex - 1 + 9) % 9;
+        //             break;
+        //         case 'ArrowRight':
+        //             currentIndex = (currentIndex + 1) % 9;
+        //             break;
+        //         case ' ':
+        //         case 'Spacebar':
+        //             selectCell(gridItems[currentIndex]);
+        //             break;
+        //         default:
+        //             return;
+        //     }
+        //     gridItems[currentIndex].focus();
+        // }
+
+        // function selectCell(item) {
+        //     if (isFinished || item.innerHTML !== "") {
+        //         return;
+        //     }
+        //     item.style.background = 'blanchedalmond';
+        //     let value = item.getAttribute("value");
+        //     item.innerHTML = turn;
+        //     boardArray[value - 1] = turn;
+        //     checkWinner();
+        //     if (!isFinished) {
+        //         turn = turn === "X" ? "O" : "X";
+        //         document.getElementById("turn").textContent = `Now it's is ${turn} turn`;
+        //     }
+        // }
+
+        // document.addEventListener('keydown', handleKeyNavigation);
+
+
+        // for (const item of gridItems) {
+        //     item.addEventListener("click", function () {
+        //         selectCell(item);
+        //     });
+
+
+        //     item.addEventListener("mouseover", function(){
+        //         if (item.innerHTML === "") {
+        //             item.style.background = "blanchedalmond";
+        //         }
+        //     });
+
+        //     item.addEventListener("mouseleave", function(){
+        //         if (item.innerHTML === "") {
+        //             item.style.background = "beige";
+        //         }
+        //     });
+    
+        // }
+
+        // function checkWinner() {
+        //     let turnLetter = document.getElementById("turn");
+        //     if (
+        //         (boardArray[0] == boardArray[1] && boardArray[1] == boardArray[2]) || 
+        //         (boardArray[3] == boardArray[4] && boardArray[4] == boardArray[5]) ||
+        //         (boardArray[6] == boardArray[7] && boardArray[7] == boardArray[8]) ||
+
+        //         (boardArray[0] == boardArray[3] && boardArray[3] == boardArray[6]) ||
+        //         (boardArray[1] == boardArray[4] && boardArray[4] == boardArray[7]) ||
+        //         (boardArray[2] == boardArray[5] && boardArray[5] == boardArray[8]) ||
+
+        //         (boardArray[0] == boardArray[4] && boardArray[4] == boardArray[8]) ||
+        //         (boardArray[2] == boardArray[4] && boardArray[4] == boardArray[6])
+        //         ) {
+        //         turnLetter.innerHTML = `The Winner is ${turn}`; 
+        //         isFinished = true;
+        //     }
+
+        //     let isDraw = true;
+        //     for (const square of boardArray) {
+        //         if (square !== "X" && square !== "O") {
+        //             isDraw = false;
+        //         }
+        //     }
+        //     if (isDraw) {
+        //         isFinished = true;
+        //         turnLetter.innerHTML = "Draw";
+        //     }
+        // }
+
+        // document.getElementById("reset-btn").addEventListener("click", function () {
+        //     resetGame();
+        // });
+
+        // function resetGame() {
+        //     for (const item of gridItems) {
+        //         item.innerHTML = "";
+        //         item.style.background = 'beige';
+                
+        //     }
+        //     boardArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
+        //     isFinished = false;
+        //     turn = "X";
+        //     document.getElementById("turn").innerHTML = `Now it's is ${turn} turn`;
+        // }
+
+
         let gridItems = document.getElementsByClassName("cell");
         let turn = "X";
         let isFinished = false;
         let boardArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
-        let currentIndex = 0; 
-        gridItems[currentIndex].focus(); 
+        let currentIndex = 0;
+        gridItems[currentIndex].focus();
+        let indexChanged = false; // Introduce the flag here
 
-        function handleKeyNavigation(event) {
-            switch (event.key) {
-                case 'ArrowUp':
-                    currentIndex = (currentIndex - 3 + 9) % 9;
-                    break;
-                case 'ArrowDown':
-                    currentIndex = (currentIndex + 3) % 9;
-                    break;
-                case 'ArrowLeft':
-                    currentIndex = (currentIndex - 1 + 9) % 9;
-                    break;
-                case 'ArrowRight':
-                    currentIndex = (currentIndex + 1) % 9;
-                    break;
-                case ' ':
-                case 'Spacebar':
-                    selectCell(gridItems[currentIndex]);
-                    break;
-                default:
-                    return;
-            }
-            gridItems[currentIndex].focus();
-        }
+        document.addEventListener('keydown', event => {
+            const handleKeyNavigation = () => {
+                switch (event.key) {
+                    case 'ArrowUp':
+                        currentIndex = (currentIndex - 3 + 9) % 9;
+                        indexChanged = true;
+                        break;
+                    case 'ArrowDown':
+                        currentIndex = (currentIndex + 3) % 9;
+                        indexChanged = true;
+                        break;
+                    case 'ArrowLeft':
+                        currentIndex = (currentIndex - 1 + 9) % 9;
+                        indexChanged = true;
+                        break;
+                    case 'ArrowRight':
+                        currentIndex = (currentIndex + 1) % 9;
+                        indexChanged = true;
+                        break;
+                    case ' ':
+                    case 'Spacebar':
+                        selectCell(gridItems[currentIndex]);
+                        break;
+                    default:
+                        return;
+                }
+            };
 
-        function selectCell(item) {
-            if (isFinished || item.innerHTML !== "") {
-                return;
+            handleKeyNavigation();
+            
+            if (indexChanged) {
+                gridItems[currentIndex].focus();
+                indexChanged = false;  
             }
-            item.style.background = 'blanchedalmond';
-            let value = item.getAttribute("value");
-            item.innerHTML = turn;
-            boardArray[value - 1] = turn;
+        });
+
+        const selectCell = item => {
+            if (isFinished || item.innerHTML !== "") return;
+            
+            const updateStyleAndContent = () => {
+                item.style.background = 'blanchedalmond';
+                item.innerHTML = turn;
+                boardArray[item.getAttribute("value") - 1] = turn;
+            };
+            
+            updateStyleAndContent();
             checkWinner();
+
             if (!isFinished) {
                 turn = turn === "X" ? "O" : "X";
                 document.getElementById("turn").textContent = `Now it's is ${turn} turn`;
             }
-        }
+        };
 
-        document.addEventListener('keydown', handleKeyNavigation);
-
-
-        for (const item of gridItems) {
-            item.addEventListener("click", function () {
-                selectCell(item);
-            });
-
-
-            item.addEventListener("mouseover", function(){
-                if (item.innerHTML === "") {
-                    item.style.background = "blanchedalmond";
-                }
-            });
-
-            item.addEventListener("mouseleave", function(){
-                if (item.innerHTML === "") {
-                    item.style.background = "beige";
-                }
-            });
-    
-        }
-
-        function checkWinner() {
-            let turnLetter = document.getElementById("turn");
-            if (
-                (boardArray[0] == boardArray[1] && boardArray[1] == boardArray[2]) || 
-                (boardArray[3] == boardArray[4] && boardArray[4] == boardArray[5]) ||
-                (boardArray[6] == boardArray[7] && boardArray[7] == boardArray[8]) ||
-
-                (boardArray[0] == boardArray[3] && boardArray[3] == boardArray[6]) ||
-                (boardArray[1] == boardArray[4] && boardArray[4] == boardArray[7]) ||
-                (boardArray[2] == boardArray[5] && boardArray[5] == boardArray[8]) ||
-
-                (boardArray[0] == boardArray[4] && boardArray[4] == boardArray[8]) ||
-                (boardArray[2] == boardArray[4] && boardArray[4] == boardArray[6])
-                ) {
-                turnLetter.innerHTML = `The Winner is ${turn}`; 
-                isFinished = true;
-            }
-
-            let isDraw = true;
-            for (const square of boardArray) {
-                if (square !== "X" && square !== "O") {
-                    isDraw = false;
-                }
-            }
-            if (isDraw) {
-                isFinished = true;
-                turnLetter.innerHTML = "Draw";
-            }
-        }
-
-        document.getElementById("reset-btn").addEventListener("click", function () {
-            resetGame();
+        [...gridItems].forEach(item => {
+            item.addEventListener("click", () => selectCell(item));
+            item.addEventListener("mouseover", () => item.innerHTML === "" ? item.style.background = "blanchedalmond" : null);
+            item.addEventListener("mouseleave", () => item.innerHTML === "" ? item.style.background = "beige" : null);
         });
 
-        function resetGame() {
-            for (const item of gridItems) {
-                item.innerHTML = "";
-                item.style.background = 'beige';
-                
-            }
-            boardArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
-            isFinished = false;
-            turn = "X";
-            document.getElementById("turn").innerHTML = `Now it's is ${turn} turn`;
-        }
+        const checkWinner = (() => {
+            const checkForWinner = () => [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+                [0, 4, 8], [2, 4, 6]
+            ].some(([a, b, c]) => boardArray[a] === boardArray[b] && boardArray[b] === boardArray[c]);
+
+            const isDraw = () => boardArray.every(square => ["X", "O"].includes(square));
+
+            return () => {
+                let turnLetter = document.getElementById("turn");
+
+                if (checkForWinner()) {
+                    turnLetter.innerHTML = `The Winner is ${turn}`; 
+                    isFinished = true;
+                } else if (isDraw()) {
+                    turnLetter.innerHTML = "Draw";
+                    isFinished = true;
+                }
+            };
+        })();
+
+        document.getElementById("reset-btn").addEventListener("click", (() => {
+            const clearBoard = () => {
+                [...gridItems].forEach(item => {
+                    item.innerHTML = "";
+                    item.style.background = 'beige';
+                });
+            };
+            
+            return () => {
+                clearBoard();
+                boardArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
+                isFinished = false;
+                turn = "X";
+                document.getElementById("turn").innerHTML = `Now it's is ${turn} turn`;
+            };
+        })());
 
     </script>
 </body>
