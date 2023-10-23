@@ -94,52 +94,113 @@ let projects = [
 
 ];
 
+function fillServicesInThePage() {
+    const servicesContent = services.map(service => `
+        <div class="services-card">
+            <div class="icon">
+                <i class="${service.icon}"></i>
+            </div>
+            <div class="info">
+                <h3>${service.header}</h3>
+                <p>${service.description}</p>
+            </div>
+        </div>`).join('');
 
-function fillServicesInThePage(){
-    document.getElementById("services-content").innerHTML = "";
-
-    for(let service of services){
-        let content = `
-            <div class="services-card">
-                <div class="icon">
-                    <i class="${service.icon}"></i>
-                </div>
-                <div class="info">
-                    <h3>${service.header}</h3>
-                    <p>${service.description}</p>
-                </div>
-            </div>`;
-
-        document.getElementById("services-content").innerHTML += content;
-    }
+    document.getElementById("services-content").innerHTML = servicesContent;
 }
 
 fillServicesInThePage();
 
-function fillProjectsInThePage(){
-    document.getElementById("container").innerHTML = "";
-
-    for(let project of projects){
-        let content = `
-            <div class="project-card">
-                <div class="face face1">
-                    <div class="card-content">
-                        <img src="${project.src}" >
-                    </div>
+function fillProjectsInThePage() {
+    const projectsContent = projects.map(project => `
+        <div class="project-card">
+            <div class="face face1">
+                <div class="card-content">
+                    <img src="${project.src}">
                 </div>
-                <div class="face face2">
-                    <div class="card-content">
-                        <h3>${project.header}</h3>
-                        <p>
-                        ${project.description}
-                        </p>
-                        <a href="${project.link}" target="_blank">More Details</a>
-                    </div>
+            </div>
+            <div class="face face2">
+                <div class="card-content">
+                    <h3>${project.header}</h3>
+                    <p>${project.description}</p>
+                    <a href="${project.link}" target="_blank">More Details</a>
                 </div>
-            </div>`;
+            </div>
+        </div>`).join('');
 
-        document.getElementById("container").innerHTML += content;
-    }
+    document.getElementById("container").innerHTML = projectsContent;
 }
 
 fillProjectsInThePage();
+
+
+// ========== Important comment ==========
+// I used map to generate the individual HTML content for each service and project. 
+// Then, the join('') method is used to concatenate all the individual contents into one string,
+// which is then assigned to the innerHTML of their respective containers.
+
+// Note: There isn't a clear use case for "reduce" or "filter" here.
+// The map function seems to be the most relevant in this case.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function fillServicesInThePage(){
+//     document.getElementById("services-content").innerHTML = "";
+
+//     for(let service of services){
+//         let content = `
+//             <div class="services-card">
+//                 <div class="icon">
+//                     <i class="${service.icon}"></i>
+//                 </div>
+//                 <div class="info">
+//                     <h3>${service.header}</h3>
+//                     <p>${service.description}</p>
+//                 </div>
+//             </div>`;
+
+//         document.getElementById("services-content").innerHTML += content;
+//     }
+// }
+
+// fillServicesInThePage();
+
+// function fillProjectsInThePage(){
+//     document.getElementById("container").innerHTML = "";
+
+//     for(let project of projects){
+//         let content = `
+//             <div class="project-card">
+//                 <div class="face face1">
+//                     <div class="card-content">
+//                         <img src="${project.src}" >
+//                     </div>
+//                 </div>
+//                 <div class="face face2">
+//                     <div class="card-content">
+//                         <h3>${project.header}</h3>
+//                         <p>
+//                         ${project.description}
+//                         </p>
+//                         <a href="${project.link}" target="_blank">More Details</a>
+//                     </div>
+//                 </div>
+//             </div>`;
+
+//         document.getElementById("container").innerHTML += content;
+//     }
+// }
+
+// fillProjectsInThePage();
