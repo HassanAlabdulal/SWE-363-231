@@ -94,22 +94,55 @@ let projects = [
 
 ];
 
-function fillServicesInThePage() {
-    const servicesContent = services.map(service => `
-        <div class="services-card">
-            <div class="icon">
-                <i class="${service.icon}"></i>
-            </div>
-            <div class="info">
-                <h3>${service.header}</h3>
-                <p>${service.description}</p>
-            </div>
-        </div>`).join('');
+// function fillServicesInThePage() {
+//     const servicesContent = services.map(service => `
+//         <div class="services-card">
+//             <div class="icon">
+//                 <i class="${service.icon}"></i>
+//             </div>
+//             <div class="info">
+//                 <h3>${service.header}</h3>
+//                 <p>${service.description}</p>
+//             </div>
+//         </div>`).join('');
 
-    document.getElementById("services-content").innerHTML = servicesContent;
+//     document.getElementById("services-content").innerHTML = servicesContent;
+// }
+
+// fillServicesInThePage();
+
+
+class ServiceCard extends React.Component {
+    render() {
+        return (
+            <div className="services-card">
+                <div className="icon">
+                    <i className={this.props.item.icon}></i>
+                </div>
+                <div className="info">
+                    <h3>{this.props.item.header}</h3>
+                    <p>{this.props.item.description}</p>
+                </div>
+            </div>
+        );
+    }
 }
 
-fillServicesInThePage();
+class ServicesList extends React.Component {
+    render() {
+        return (
+            <section className="services-cards" id="services">
+                <h2 className="title">Services</h2>
+                <div className="content" id="services-content">
+                    {services.map(service => <ServiceCard key={service.header} item={service} />)}
+                </div>
+            </section>
+        );
+    }
+}
+
+ReactDOM.render(<ServicesList />, document.getElementById('react-root'));
+
 
 function fillProjectsInThePage() {
     const projectsContent = projects.map(project => `
