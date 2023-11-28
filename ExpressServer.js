@@ -1,20 +1,18 @@
 const express = require("express");
-const path = require("path");
 const app = express();
 const port = 3000;
 
-app.use(express.static("./")); // Serve static files from the root directory
+// Import the routers
+const mainRouter = require("./mainRouter");
+const contactRouter = require("./contactRouter");
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "homePage.html"));
-});
+app.use(express.static("./"));
 
-app.get("/contact", (req, res) => {
-  res.sendFile(path.join(__dirname, "contact.html"));
-});
+// Use the routers
+app.use("/", mainRouter);
+app.use("/", contactRouter);
 
-// ... other routes for additional pages
-
+// Listen on the configured port
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
