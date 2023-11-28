@@ -1,18 +1,26 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const port = 3000;
 
-// Import the routers
-const mainRouter = require("./mainRouter");
-const contactRouter = require("./contactRouter");
+// Middleware to parse form data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("./")); // Serve static files
 
-app.use(express.static("./"));
+// Define a route to handle form submission
+app.post("/submit-form", (req, res) => {
+  const { name, email, message, signature } = req.body;
+  res.send("Form submitted successfully! We have received your data.");
+});
 
-// Use the routers
-app.use("/", mainRouter);
-app.use("/", contactRouter);
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "homePage.html"));
+});
 
-// Listen on the configured port
+app.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "contact.html"));
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
